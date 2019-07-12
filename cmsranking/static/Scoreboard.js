@@ -158,9 +158,9 @@ var Scoreboard = new function () {
 <col class=\"team\"/>";
 
         var contests = DataStore.contest_list;
-//        for (var i in contests) {
-//            var contest = contests[i];
-//            var c_id = contest["key"];
+        for (var i in contests) {
+            var contest = contests[i];
+            var c_id = contest["key"];
 
             var tasks = contest["tasks"];
             for (var j in tasks) {
@@ -173,7 +173,7 @@ var Scoreboard = new function () {
 
 //            result += " \
 //<col class=\"score contest\" data-contest=\"" + c_id + "\" data-sort_key=\"c_" + c_id + "\"/> <col/><col/><col/>";
-//        }
+        }
 
         result += " \
 <col class=\"score global\" data-sort_key=\"global\"/> <col/><col/><col/><col/>";
@@ -193,9 +193,9 @@ var Scoreboard = new function () {
     <th class=\"team\">Team</th>";
 
         var contests = DataStore.contest_list;
-//        for (var i in contests) {
-//            var contest = contests[i];
-//            var c_id = contest["key"];
+        for (var i in contests) {
+            var contest = contests[i];
+            var c_id = contest["key"];
 
             var tasks = contest["tasks"];
             for (var j in tasks) {
@@ -208,7 +208,7 @@ var Scoreboard = new function () {
 
 //            result += " \
 //    <th colspan=\"4\" class=\"score contest\" data-contest=\"" + c_id + "\" data-sort_key=\"c_" + c_id + "\"><abbr title=\"" + escapeHTML(contest["name"]) + "\">" + escapeHTML(contest["name"]) + "</abbr></th>";
-//        }
+        }
 
         result += " \
     <th colspan=\"5\" class=\"score global\" data-sort_key=\"global\">Global</th> \
@@ -247,9 +247,9 @@ var Scoreboard = new function () {
         }
 
         var contests = DataStore.contest_list;
-//        for (var i in contests) {
-//            var contest = contests[i];
-//            var c_id = contest["key"];
+        for (var i in contests) {
+            var contest = contests[i];
+            var c_id = contest["key"];
 
             var tasks = contest["tasks"];
             for (var j in tasks) {
@@ -264,7 +264,7 @@ var Scoreboard = new function () {
 //            var score_class = self.get_score_class(user["c_" + c_id], contest["max_score"]);
 //            result += " \
 //    <td colspan=\"4\" class=\"score contest " + score_class + "\" data-contest=\"" + c_id + "\" data-sort_key=\"c_" + c_id + "\">" + round_to_str(user["c_" + c_id], contest["score_precision"]) + "</td>";
-//        }
+        }
 
         var score_class = self.get_score_class(user["global"], DataStore.global_max_score);
         result += " \
