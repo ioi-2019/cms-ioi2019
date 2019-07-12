@@ -240,7 +240,7 @@ var Scoreboard = new function () {
 
         if (user['team']) {
             result += " \
-<td>user['team']</td>";
+<td>"+user['team']+"</td>";
         } else {
             result += " \
     <td> </td>";
