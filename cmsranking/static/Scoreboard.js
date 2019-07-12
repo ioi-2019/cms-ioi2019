@@ -240,7 +240,7 @@ var Scoreboard = new function () {
 
         if (user['team']) {
             result += " \
-<td>user["team"]</td>";
+<td>AZE</td>";
         } else {
             result += " \
     <td class=\"team\"></td>";
