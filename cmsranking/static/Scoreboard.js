@@ -159,8 +159,8 @@ var Scoreboard = new function () {
 
         var contests = DataStore.contest_list;
 //        for (var i in contests) {
-            var contest = contests[i];
-            var c_id = contest["key"];
+//            var contest = contests[i];
+//            var c_id = contest["key"];
 
             var tasks = contest["tasks"];
             for (var j in tasks) {
@@ -194,8 +194,8 @@ var Scoreboard = new function () {
 
         var contests = DataStore.contest_list;
 //        for (var i in contests) {
-            var contest = contests[i];
-            var c_id = contest["key"];
+//            var contest = contests[i];
+//            var c_id = contest["key"];
 
             var tasks = contest["tasks"];
             for (var j in tasks) {
