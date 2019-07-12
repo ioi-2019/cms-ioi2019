@@ -240,10 +240,10 @@ var Scoreboard = new function () {
 
         if (user['team']) {
             result += " \
-<td>AZE</td>";
+<td>user['team']</td>";
         } else {
             result += " \
-    <td class=\"team\"></td>";
+    <td> </td>";
         }
 
         var contests = DataStore.contest_list;
