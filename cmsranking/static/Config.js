@@ -51,7 +51,7 @@ var Config = new function () {
     };
 
     self.get_flag_url = function (t_key) {
-        return "flags/" + t_key;
+        return "flags/" + t_key + ".svg";
     };
 
     self.get_face_url = function (u_key) {
