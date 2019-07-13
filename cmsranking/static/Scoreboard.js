@@ -240,7 +240,7 @@ var Scoreboard = new function () {
 
         if (user['team']) {
             result += " \
-<td><a title=\"+ DataStore.teams[user["team"]]["name"] +\">"+user['team']+"</a></td>";
+<td><a title=\"" + DataStore.teams[user["team"]]["name"] + "\">"+user['team']+"</a></td>";
         } else {
             result += " \
     <td> </td>";
