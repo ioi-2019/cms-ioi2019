@@ -401,6 +401,7 @@ cmsranking/static/img/face.png
 cmsranking/static/img/favicon.png
 cmsranking/static/img/flag.png
 cmsranking/static/img/logo.png
+cmsranking/static/img/new_logo.png
 cmsranking/static/img/tick_black.png
 cmsranking/static/img/tick_white.png
 cmsranking/static/lib/eventsource.js

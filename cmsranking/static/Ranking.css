@@ -250,7 +250,7 @@ abbr {
     -moz-box-sizing: content-box;
     box-sizing: content-box;
     top: 0;
-    right: 118px;
+    right: 10px;
     height: 1.5em;
     margin: 0.5em;
     border: 1px solid #ddd;
@@ -1103,9 +1103,9 @@ abbr {
 #ConnectionStatus_box {
     display: inline-block;
     position: relative;
-    float: right;
+    float: left;
     margin: 0.5em;
-    text-align: right;
+    text-align: left;
     z-index: 2;
 }
 
@@ -1113,12 +1113,13 @@ abbr {
     display: inline-block;
     position: relative;
     height: 1.5em;
-    padding: 0.25em 20px;
+    padding: 0.25em 15px;
     margin: -1px 0;
     z-index: 2;
     border-width: 1px;
     border-style: solid;
-    border-radius: 4px;
+    border-radius: 50px;
+    background-color: green !important;
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
@@ -1126,17 +1127,18 @@ abbr {
             user-select: none;
 }
 
-#ConnectionStatus_box:hover #ConnectionStatus_label {
+/*#ConnectionStatus_box:hover #ConnectionStatus_label {
     border-bottom-width: 0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-}
+}*/
 
 #ConnectionStatus_text {
     display: none;
     position: absolute;
-    top: 2em;
-    right: 0;
+    top: -5px;
+    /*right: 0;*/
+    left: 40px;
     width: 240px;
     padding: 0.5em;
     margin-top: -1px;
