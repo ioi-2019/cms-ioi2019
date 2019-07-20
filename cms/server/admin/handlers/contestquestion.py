@@ -58,6 +58,7 @@ class QuestionsHandler(BaseHandler):
         self.r_params["questions"] = self.sql_session.query(Question)\
             .join(Participation)\
             .filter(Participation.contest_id == contest_id)\
+            .filter(~Question.subject.contains('water'))\
             .order_by(Question.question_timestamp.desc())\
             .order_by(Question.id).all()
         self.render("questions.html", **self.r_params)
