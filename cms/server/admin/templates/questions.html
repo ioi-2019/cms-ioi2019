@@ -40,6 +40,14 @@ utils.show_page("questions", 1);
 
 <p>Jamal is testing this interface, ignore his questions ;-P</p>
 
+<form action="{{ url("contest", contest.id, "question") }}" name="qstnFilter" method="POST">
+	<input type="checkbox" name="qstn_filter[]" value="water" />Water<br />
+	<input type="checkbox" name="qstn_filter[]" value="snack" />Snack<br />
+	<input type="checkbox" name="qstn_filter[]" value="wc" />WC<br />
+	<input type="checkbox" name="qstn_filter[]" value="paper" />Extra paper<br />
+	<input type="checkbox" name="qstn_filter[]" value="clarification" />Clarification<br />
+</form>
+
 {% if questions != [] %}
 <div id="questions" class="notifications">
   <div id="page_selector_questions"></div>
