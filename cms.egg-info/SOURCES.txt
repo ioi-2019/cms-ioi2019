@@ -400,6 +400,8 @@ cmsranking/static/img/close.png
 cmsranking/static/img/face.png
 cmsranking/static/img/favicon.png
 cmsranking/static/img/flag.png
+cmsranking/static/img/heartbeat-green.png
+cmsranking/static/img/heartbeat-red.png
 cmsranking/static/img/logo.png
 cmsranking/static/img/new_logo.png
 cmsranking/static/img/tick_black.png

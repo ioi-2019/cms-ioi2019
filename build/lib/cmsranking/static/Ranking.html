@@ -36,7 +36,10 @@ if (!("EventSource" in window)) {
             </div>
             <div id="UpperPanel">
                 <div id="ConnectionStatus_box">
-                    <div id="ConnectionStatus_label"></div>
+                    <div id="ConnectionStatus_label">
+                        <img id="connectedtosrv" src="img/heartbeat-green.png">
+                        <img id="disconnectedtosrv" src="img/heartbeat-red.png">
+                    </div>
                     <div id="ConnectionStatus_text"></div>
                 </div>
             </div>
