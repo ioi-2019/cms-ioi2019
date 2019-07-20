@@ -29,7 +29,11 @@
 </div>
 {% endif %}
 
-
+<script>
+	function subjType() {
+	alert("Clicked");
+	}
+</script>
 
 {% if questions_enabled %}
 
@@ -49,6 +53,10 @@
                             {% endfor %}
                         {% endif %}
                     </datalist>
+		    <br>
+		    <div>
+			    <label><input type="checkbox" id="water" name="water" onclick="subjType()">Water</label>
+		    </div>
                 </div>
             </div>
             <div class="control-group">
