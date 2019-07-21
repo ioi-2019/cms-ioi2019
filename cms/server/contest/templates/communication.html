@@ -30,8 +30,15 @@
 {% endif %}
 
 <script>
-	function subjType() {
-	//alert("Clicked");
+	function subjectTypeClicked(cname) {
+		var cbox = document.getElementsByName(cname)[0];
+		var text = document.getElementById('input_subject');
+		
+		if (cbox.checked) {
+			text.value += '#' + cname + ' ');
+		} else {
+		        text.value = text.value.replace('#' + cname, '');
+		}
 	}
 </script>
 
@@ -54,12 +61,31 @@
                         {% endif %}
                     </datalist>
 		    <br>
-			    <!--label><input type="checkbox" id="water" name="water" onclick="subjType()">Water</label>
-			    <label><input type="checkbox" id="snack" name="snack" onclick="subjType()">Snack</label>
-			    <label><input type="checkbox" id="wc" name="wc" onclick="subjType()">WC</label>
-			    <label><input type="checkbox" id="paper" name="paper" onclick="subjType()">Extra paper</label>
-			    <label><input type="checkbox" id="clarification" name="clarification" onclick="subjType()">Clarification</label-->
-                </div>
+		    <table>
+			<tr>
+			<td>
+				<input type="checkbox" id="water" name="water" onclick="subjectTypeClicked('water')">
+				<label for="water">Water</label>
+			</td>
+			<td>
+				<input type="checkbox" id="snack" name="snack" onclick="subjectTypeClicked('snack')">
+				<label for="snack">Snack</label>
+			</td>
+			<td>
+				<input type="checkbox" id="paper" name="paper" onclick="subjectTypeClicked('paper')">
+				<label for=per">A4 Paper</label>
+			</td>
+			<td>
+				<input type="checkbox" id="wc" name="wc" onclick="subjectTypeClicked('wc')">
+				<label for="wc">WC</label>
+			</td>
+			<td>
+				<input type="checkbox" id="clarification" name="clarification" onclick="subjectTypeClicked('clarification')">
+				<label for="clarification">Clarification</label>
+			</td>
+			</tr>
+		    </table>
+		</div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="input_text">{% trans %}Text{% endtrans %}</label>
