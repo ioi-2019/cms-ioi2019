@@ -36,8 +36,9 @@
 		
 		if (cbox.checked) {
 			text.value += '#' + cname + ' ';
+			document.getElementById("input_text").focus();
 		} else {
-		        text.value = text.value.replace('#' + cname, '');
+		        text.value = text.value.replace('#' + cname+ ' ', '').replace('#' + cname, '');
 		}
 	}
 </script>
@@ -45,6 +46,31 @@
 {% if questions_enabled %}
 
 <h2>{% trans %}Questions{% endtrans %}</h2>
+<b>Choose a category and add description in the "Text" part:</b>
+
+<table cellpadding="10">
+<tr>
+	<td>
+	  <label for="water"><input type="checkbox" id="water" name="water" onclick="subjectTypeClicked('water')">Water</label>
+	</td>
+	<td>
+	  <label for="snack"><input type="checkbox" id="snack" name="snack" onclick="subjectTypeClicked('snack')">Snack</label>
+	</td>
+	<td>
+	  <label for="paper"><input type="checkbox" id="paper" name="paper" onclick="subjectTypeClicked('paper')">Extra A4 Paper</label>
+	</td>
+	<td>
+	  <label for="wc"><input type="checkbox" id="wc" name="wc" onclick="subjectTypeClicked('wc')">WC</label>
+	</td>
+	<td>
+	  <label for="clarification"><input type="checkbox" id="clarification" name="clarification" onclick="subjectTypeClicked('clarification')">Clarification</label>
+	</td>
+	<td>
+	  <label for="other"><input type="checkbox" id="other" name="other" onclick="subjectTypeClicked('other')">Other</label>
+	</td>
+</tr>
+</table>
+
 <div class="well question_submit">
     <form class="form-horizontal" action="{{ contest_url("question") }}" method="POST">
         {{ xsrf_form_html|safe }}
@@ -59,32 +85,6 @@
                         <option value="{{ task.name }}">
                             {% endfor %}
                         {% endif %}
-                    </datalist>
-		    <br>
-		    <div><table>
-			<tr>
-			<td>
-				<input type="checkbox" id="water" name="water" onclick="subjectTypeClicked('water')">
-				<label for="water">Water</label>
-			</td>
-			<td>
-				<input type="checkbox" id="snack" name="snack" onclick="subjectTypeClicked('snack')">
-				<label for="snack">Snack</label>
-			</td>
-			<td>
-				<input type="checkbox" id="paper" name="paper" onclick="subjectTypeClicked('paper')">
-				<label for=per">A4 Paper</label>
-			</td>
-			<td>
-				<input type="checkbox" id="wc" name="wc" onclick="subjectTypeClicked('wc')">
-				<label for="wc">WC</label>
-			</td>
-			<td>
-				<input type="checkbox" id="clarification" name="clarification" onclick="subjectTypeClicked('clarification')">
-				<label for="clarification">Clarification</label>
-			</td>
-			</tr>
-			</table></div>
 		</div>
             </div>
             <div class="control-group">
