@@ -806,65 +806,53 @@ abbr {
 }
 
 .score_0 {
-    background-color: #FFFFFF;
-    /*background-image: linear-gradient(rgb(204, 0, 0), rgb(244, 0, 0));*/
+    color: #666;
 }
 
 .score_0_10 {
-    background-color: #EBFBFD;  
-    /*background-image: linear-gradient(rgb(210, 38, 0), rgb(235, 29, 0));*/
+    background-color: hsl(120, 30%, 87%);
 }
 
 .score_10_20 {
-    background-color: #D7F7FB;
-    /*background-image: linear-gradient(rgb(216, 77, 0), rgb(226, 58, 0));*/
+    background-color: hsl(120, 30%, 84%);
 }
 
 .score_20_30 {
-    background-color: #C2F3FA; 
-    /*background-image: linear-gradient(rgb(222, 115, 0), rgb(217, 87, 0));*/
+    background-color: hsl(120, 30%, 81%);
 }
 
 .score_30_40 {
-    background-color: #AEEFF8;
-    /*background-image: linear-gradient(rgb(228, 154, 0), rgb(209, 116, 0));*/
+    background-color: hsl(120, 30%, 78%);
 }
 
 .score_40_50 {
-    background-color: #9AEBF6;
-    /*background-image: linear-gradient(rgb(234, 192, 0), rgb(200, 145, 0));*/
+    background-color: hsl(120, 30%, 75%);
 }
 
 .score_50_60 {
-    background-color: #86E6F4;
-    /*background-image: linear-gradient(rgb(225, 211, 2), rgb(185, 159, 0));*/
+    background-color: hsl(120, 30%, 72%);
 }
 
 .score_60_70 {
-    background-color: #72E2F2;
-    /*background-image: linear-gradient(rgb(203, 211, 6), rgb(163, 158, 1));*/
+    background-color: hsl(120, 30%, 69%);
 }
 
 .score_70_80 {
-    background-color: #5DDEF1; 
-    /*background-image: linear-gradient(rgb(181, 211, 10), rgb(142, 157, 2));*/
+    background-color: hsl(120, 30%, 66%);
 }
 
 .score_80_90 {
-    background-color: #49DAEF; 
-    /*background-image: linear-gradient(rgb(159, 210, 14), rgb(120, 156, 3));*/
+    background-color: hsl(120, 30%, 63%);
 }
 
 .score_90_100 {
-    background-color: #35D6ED;
-    /*background-image: linear-gradient(rgb(137, 210, 18), rgb(99, 155, 4));*/
+    background-color: hsl(120, 30%, 60%);
 }
 
 .score_100 {
-    background-color: #35c1ed;
-    /*background-image: linear-gradient(rgb(115, 210, 22), rgb(78, 154, 5));*/
-}
 
+    background-color: hsl(120, 30%, 55%);
+}
 
 /******************************************************************************\
 |                                                                              |
@@ -1107,9 +1095,33 @@ abbr {
     margin: 0.5em;
     text-align: left;
     z-index: 2;
+    left: 10px;
 }
 
 #ConnectionStatus_label {
+    background-color: inherit !important;
+    margin-top: -3px;
+}
+
+
+#ConnectionStatus_label img {
+    width: 5%;
+    border-radius: 20px !important;
+    padding: 2px;
+}
+
+
+#ConnectionStatus_label #connectedtosrv {
+    border: 2px solid green !important;
+}
+
+#ConnectionStatus_label #disconnectedtosrv {
+    border: 2px solid #e62f29 !important;
+}
+
+
+
+/*#ConnectionStatus_label {
     display: inline-block;
     position: relative;
     height: 1.5em;
@@ -1125,7 +1137,7 @@ abbr {
         -ms-user-select: none;
          -o-user-select: none;
             user-select: none;
-}
+}*/
 
 /*#ConnectionStatus_box:hover #ConnectionStatus_label {
     border-bottom-width: 0;
@@ -1160,11 +1172,27 @@ abbr {
     border-color: green;
 }
 
+#ConnectionStatus_box[data-status="connected"] #connectedtosrv {
+    display: inline-block !important;
+}
+
+#ConnectionStatus_box[data-status="connected"] #disconnectedtosrv {
+    display: none !important;
+}
+
 #ConnectionStatus_box[data-status="reconnecting"] #ConnectionStatus_label,
 #ConnectionStatus_box[data-status="reconnecting"] #ConnectionStatus_text {
     background-color: yellow;
     color: black;
     border-color: black;
+}
+
+#ConnectionStatus_box[data-status="reconnecting"] #connectedtosrv {
+    display: none !important;
+}
+
+#ConnectionStatus_box[data-status="reconnecting"] #disconnectedtosrv {
+    display: inline-block !important;
 }
 
 #ConnectionStatus_box[data-status="disconnected"] #ConnectionStatus_label,
