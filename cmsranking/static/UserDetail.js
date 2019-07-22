@@ -127,6 +127,13 @@ var UserDetail = new function () {
 
             if (self.user["team"]) {
                 self.team_label.text(DataStore.teams[self.user["team"]]["name"]);
+                var numWordsInTm = DataStore.teams[self.user["team"]]["name"].split(' ').length; 
+                if(numWordsInTm < 2) {
+                    self.team_label.css("font-size", '2em');
+                } else {
+
+                    self.team_label.css("font-size", '1.4em');
+                }
                 self.flag_image.attr("src", Config.get_flag_url(self.user['team']));
                 self.flag_image.removeClass("hidden");
             } else {

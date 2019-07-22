@@ -134,10 +134,10 @@ var Overview = new function () {
                                self.height - self.PAD_B);
 
         var ranks = [
-            { color: "#ffd700", ratio: 1/12 },
-            { color: "#c0c0c0", ratio: 2/12 },
-            { color: "#cd7f32", ratio: 3/12 },
-            { color: "#000000", ratio: 6/12 }
+            { color: "#1fb4e3", ratio: 1/12 },
+            { color: "#f53340", ratio: 2/12 },
+            { color: "#ff6f79", ratio: 3/12 },
+            { color: "#4e9e31", ratio: 6/12 }
         ];
         var stops = [];
         var base = 0;
