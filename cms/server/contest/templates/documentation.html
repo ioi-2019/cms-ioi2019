@@ -9,6 +9,8 @@
     <h1>{% trans %}Documentation{% endtrans %}</h1>
 </div>
 
+<!-- Commented, since all documentations are in Desktop
+
 <h2>{% trans %}Programming languages and libraries{% endtrans %}</h2>
 
 {% if contest.languages|map("to_language")|map(attribute="source_extensions")|any("contains", ".cpp") %}
@@ -23,6 +25,7 @@
 <p>{% trans %}The main Java class of the solution should have exactly the same name as the task.{% endtrans %}</p>
 {% endif %}
 
+-->
 
 <h2>{% trans %}Submission details for compilation{% endtrans %}</h2>
 
