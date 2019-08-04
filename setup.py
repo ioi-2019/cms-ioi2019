@@ -58,6 +58,7 @@ PACKAGE_DATA = {
         "contest/static/*.*",
         "contest/static/css/*.*",
         "contest/static/img/*.*",
+        "contest/static/img/icons/*.*",
         "contest/static/img/mimetypes/*.*",
         "contest/static/js/*.*",
         "contest/templates/*.*",
