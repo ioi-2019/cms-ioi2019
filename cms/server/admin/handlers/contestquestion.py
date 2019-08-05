@@ -57,6 +57,13 @@ class QuestionsHandler(BaseHandler):
         self.r_params = self.render_params()
         self.r_params["questions"] = self.sql_session.query(Question)\
             .join(Participation)\
+            .filter(~Question.subject.contains('#water'))\
+            .filter(~Question.subject.contains('#banana'))\
+            .filter(~Question.subject.contains('#apple'))\
+            .filter(~Question.subject.contains('#chocolate'))\
+            .filter(~Question.subject.contains('#cupcake'))\
+            .filter(~Question.subject.contains('#paper'))\
+            .filter(~Question.subject.contains('#wc'))\
             .filter(Participation.contest_id == contest_id)\
             .order_by(Question.question_timestamp.desc())\
             .order_by(Question.id).all()
