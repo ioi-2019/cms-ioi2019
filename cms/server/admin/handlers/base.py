@@ -313,6 +313,13 @@ class BaseHandler(CommonRequestHandler):
         if self.contest is not None:
             params["phase"] = self.contest.phase(params["timestamp"])
             params["unanswered"] = self.sql_session.query(Question)\
+                .filter(~Question.subject.contains('#water'))\
+                .filter(~Question.subject.contains('#banana'))\
+                .filter(~Question.subject.contains('#apple'))\
+                .filter(~Question.subject.contains('#chocolate'))\
+                .filter(~Question.subject.contains('#cupcake'))\
+                .filter(~Question.subject.contains('#paper'))\
+                .filter(~Question.subject.contains('#wc'))\
                 .join(Participation)\
                 .filter(Participation.contest_id == self.contest.id)\
                 .filter(Question.reply_timestamp.is_(None))\
