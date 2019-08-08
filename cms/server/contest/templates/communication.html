@@ -30,55 +30,37 @@
 {% endif %}
 
 <script>
-	function subjectTypeClicked(cname) {
-		var cbox = document.getElementsByName(cname)[0];
-		var text = document.getElementById('input_subject');
-		
-		if (cbox.checked) {
-			text.value += '#' + cname + ' ';
-			document.getElementById("input_text").focus();
-		} else {
-		        text.value = text.value.replace('#' + cname+ ' ', '').replace('#' + cname, '');
-		}
-	}
+  function subjectTypeClicked(cbox, cname) {
+    var text = document.getElementById('input_subject');
+
+    if (cbox.className.indexOf("active") === -1) {
+      cbox.className += " active"
+      text.value += '#' + cname + ' ';
+      document.getElementById("input_text").focus();
+    } else {
+      cbox.className = cbox.className.replace("active", "");
+      text.value = text.value.replace('#' + cname + ' ', '').replace('#' + cname, '');
+    }
+
+    return false;
+  }
 </script>
 
 {% if questions_enabled %}
 
 <h2>{% trans %}Questions{% endtrans %}</h2>
-<b>Choose a category and add description in the "Text" part:</b>
 
-<table cellpadding="10">
-<tr>
-	<td>
-	  <label for="water"><input type="checkbox" id="water" name="water" onclick="subjectTypeClicked('water')">Water</label>
-	</td>
-	<td>
-	  <label for="snack"><input type="checkbox" id="banana" name="banana" onclick="subjectTypeClicked('banana')">Banana</label>
-	</td>
-	<td>
-	  <label for="snack"><input type="checkbox" id="apple" name="apple" onclick="subjectTypeClicked('apple')">Apple</label>
-	</td>
-	<td>
-	  <label for="snack"><input type="checkbox" id="chocolate" name="chocolate" onclick="subjectTypeClicked('chocolate')">Chocolate bar</label>
-	</td>
-	<td>
-	  <label for="snack"><input type="checkbox" id="cupcake" name="cupcake" onclick="subjectTypeClicked('cupcake')">Cupcake</label>
-	</td>
-	<td>
-	  <label for="paper"><input type="checkbox" id="paper" name="paper" onclick="subjectTypeClicked('paper')">Extra A4 Paper</label>
-	</td>
-	<td>
-	  <label for="wc"><input type="checkbox" id="wc" name="wc" onclick="subjectTypeClicked('wc')">WC</label>
-	</td>
-	<td>
-	  <label for="clarification"><input type="checkbox" id="clarification" name="clarification" onclick="subjectTypeClicked('clarification')">Clarification</label>
-	</td>
-	<td>
-	  <label for="other"><input type="checkbox" id="other" name="other" onclick="subjectTypeClicked('other')">Other</label>
-	</td>
-</tr>
-</table>
+<div class="btn-toolbar">
+  <div class="btn-group">
+    <a class="btn" title="Water" href="#" onclick="return subjectTypeClicked(this, 'water')"><img src="{{ url("static", "img", "icons", "water.png") }}"></a>
+    <a class="btn" title="Banana" href="#" onclick="return subjectTypeClicked(this, 'banana')"><img src="{{ url("static", "img", "icons", "banana.png") }}"></a>
+    <a class="btn" title="Apple" href="#" onclick="return subjectTypeClicked(this, 'apple')"><img src="{{ url("static", "img", "icons", "apple.png") }}"></a>
+    <a class="btn" title="Chocolate bar" href="#" onclick="return subjectTypeClicked(this, 'chocolate')"><img src="{{ url("static", "img", "icons", "chocolate.png") }}"></a>
+    <a class="btn" title="Cupcake" href="#" onclick="return subjectTypeClicked(this, 'cupcake')"><img src="{{ url("static", "img", "icons", "cupcake.png") }}"></a>
+    <a class="btn" title="Extra A4 Paper" href="#" onclick="return subjectTypeClicked(this, 'paper')"><img src="{{ url("static", "img", "icons", "paper.png") }}"></a>
+    <a class="btn" title="WC" href="#" onclick="return subjectTypeClicked(this, 'wc')"><img src="{{ url("static", "img", "icons", "wc.png") }}"></a>
+  </div>
+</div>
 
 <div class="well question_submit">
     <form class="form-horizontal" action="{{ contest_url("question") }}" method="POST">
